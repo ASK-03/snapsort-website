@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
+import { Analytics } from '@vercel/analytics/next';
+
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
@@ -67,6 +69,7 @@ export default function RootLayout({
       </head>
       <body className={`${manrope.className} bg-black text-white antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
